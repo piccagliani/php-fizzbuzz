@@ -1,0 +1,15 @@
+FROM centos:6
+
+MAINTAINER @piccagliani
+
+RUN cp -p /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN echo ZONE="Asia/Tokyo" > /etc/sysconfig/clock
+RUN echo UTC="false" >> /etc/sysconfig/clock
+RUN source /etc/sysconfig/clock
+
+RUN yum update -y
+RUN rpm -Uvh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/i386/epel-release-6-8.noarch.rpm
+RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+RUN yum install -y --enablerepo=remi --enablerepo=remi-php56 php php-mbstring php-mcrypt
+
+CMD ["/bin/bash"]
