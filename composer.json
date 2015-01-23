@@ -1,0 +1,19 @@
+{
+  "name": "piccagliani/php-fizzbuzz",
+  "require": {
+    "codeception/codeception": "~2.0",
+    "codeception/specify": "0.4.*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "piccagliani",
+      "email": "piccagliani.dev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "FizzBuzz": "src/"
+    }
+  }
+}
