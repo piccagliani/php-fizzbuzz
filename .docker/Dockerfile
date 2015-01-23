@@ -12,4 +12,7 @@ RUN rpm -Uvh http://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/6/i386/epel-release-6-
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 RUN yum install -y --enablerepo=remi --enablerepo=remi-php56 php php-mbstring php-mcrypt
 
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+
 CMD ["/bin/bash"]
